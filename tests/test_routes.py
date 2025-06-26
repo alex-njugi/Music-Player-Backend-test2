@@ -6,7 +6,8 @@ class BasicRouteTestCase(unittest.TestCase):
     def setUp(self):
         self.app = app.test_client()
         app.config["TESTING"] = True
-        app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///:memory:"
+        app.config["SQLALCHEMY_DATABASE_URI"] = postgresql://music_user:tqkBfrBNKZPN3ATdLgKDczKTzq92thMQ@dpg-d1elqommcj7s73eghevg-a/music_player_db_6x7x
+
         with app.app_context():
             db.create_all()
 
