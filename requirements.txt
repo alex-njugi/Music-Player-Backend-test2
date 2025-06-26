@@ -1,0 +1,9 @@
+Flask
+Flask-JWT-Extended
+Flask-Cors
+Flask-Bcrypt
+Flask-SQLAlchemy
+cloudinary
+python-dotenv
+Werkzeug
+pytest
