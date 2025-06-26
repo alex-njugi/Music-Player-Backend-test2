@@ -9,6 +9,8 @@ from models.db import db
 from config import Config
 from routes.auth_routes import auth_bp
 from routes.song_routes import song_bp
+from models.user import User  # make sure all models are imported
+from models.song import Song
 
 load_dotenv()
 
@@ -27,12 +29,11 @@ app.register_blueprint(song_bp)
 
 @app.route("/")
 def index():
-    return {"message": "Music Player Backend is live "}
+    return {"message": "Music Player Backend is live"}
 
-if __name__ == "__main__":
-    app.run(debug=True)
-import os
-from models.db import db
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 if __name__ == "__main__":
     with app.app_context():
